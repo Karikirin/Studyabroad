@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>StudyAbroad — Education, Career & Life Overseas</title>
+<meta name="description" content="Helping Indian students achieve their dreams in medicine, higher education, Ausbildung in Germany, and international careers with end-to-end guidance."/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0B1D3A;--navy2:#162D55;--ivory:#F8F6F1;--ivory2:#F0EDE6;
+  --gold:#C9A84C;--gold2:#E8D28A;--slate:#6B7280;--white:#FFFFFF;
+  --lightblue:#EAF0FA;--border:#E2DDD4;--border2:#D0CAC0;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--navy);background:var(--white);overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;letter-spacing:-0.02em}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+
+/* UTILITIES */
+.container{max-width:1200px;margin:0 auto;padding:0 48px}
+@media(max-width:768px){.container{padding:0 24px}}
+.eyebrow{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold)}
+.gold-bar{width:40px;height:2px;background:var(--gold);margin:14px 0 22px}
+.section-title{font-size:clamp(30px,4vw,46px);font-weight:700;color:var(--navy);line-height:1.12}
+.section-title.white{color:var(--white)}
+.tag{font-size:11px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--navy);background:var(--ivory);padding:5px 12px;border:1px solid var(--border);white-space:nowrap}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-weight:600;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;padding:13px 26px;border:none;cursor:pointer;transition:all .25s;text-decoration:none}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-gold:hover{background:var(--gold2)}
+.btn-ghost{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.55)}
+.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:var(--white)}
+.btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}
+.btn-outline:hover{background:var(--navy);color:var(--white)}
+.btn-sm{padding:10px 20px;font-size:12px}
+
+/* ——— NAV ——— */
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;background:rgba(11,29,58,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,.18);display:flex;align-items:center}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
+.logo{font-family:'Playfair Display',serif;font-size:20px;color:var(--white);cursor:pointer}
+.logo span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{color:rgba(255,255,255,.7);font-size:13px;font-weight:500;letter-spacing:.04em;cursor:pointer;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-mob{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-mob span{display:block;width:22px;height:1.5px;background:var(--white)}
+@media(max-width:900px){.nav-links{display:none}.nav-mob{display:flex}}
+
+/* ——— HERO ——— */
+#hero{min-height:100vh;background:var(--navy);padding-top:68px;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.05) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hero-ring{position:absolute;right:-120px;top:50%;transform:translateY(-50%);width:680px;height:680px;border-radius:50%;border:1px solid rgba(201,168,76,.08);pointer-events:none}
+.hero-ring::before{content:'';position:absolute;inset:70px;border-radius:50%;border:1px solid rgba(201,168,76,.06)}
+.hero-ring::after{content:'';position:absolute;inset:150px;border-radius:50%;border:1px solid rgba(201,168,76,.04)}
+.hero-layout{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;padding:80px 0;position:relative;z-index:2}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:28px}
+.hero-badge::before{content:'';width:28px;height:1px;background:var(--gold)}
+.hero-h1{font-size:clamp(38px,5vw,60px);font-weight:700;color:var(--white);line-height:1.08;margin-bottom:26px}
+.hero-h1 em{font-style:normal;color:var(--gold)}
+.hero-lead{font-size:16px;line-height:1.8;color:rgba(255,255,255,.62);margin-bottom:40px;font-weight:300;max-width:460px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:40px;margin-top:56px;padding-top:48px;border-top:1px solid rgba(255,255,255,.09)}
+.stat-n{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:var(--white);line-height:1}
+.stat-n em{color:var(--gold);font-style:normal}
+.stat-l{font-size:11px;color:rgba(255,255,255,.45);letter-spacing:.07em;text-transform:uppercase;margin-top:5px}
+
+/* hero right */
+.hero-right{display:flex;flex-direction:column;gap:14px}
+.hcard{background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);padding:28px 30px}
+.hcard-title{font-family:'Playfair Display',serif;font-size:18px;color:var(--white);margin-bottom:7px}
+.hcard-sub{font-size:13px;color:rgba(255,255,255,.46);line-height:1.6}
+.dest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.dest-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);padding:13px;text-align:center;cursor:pointer;transition:all .25s}
+.dest-item:hover{border-color:var(--gold);background:rgba(201,168,76,.08)}
+.dest-flag{font-size:20px;margin-bottom:5px}
+.dest-name{font-size:10px;color:rgba(255,255,255,.55);letter-spacing:.08em;text-transform:uppercase}
+.hinfo-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hinfo{border:1px solid rgba(255,255,255,.07);padding:18px 20px}
+.hinfo-label{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.38);margin-bottom:6px}
+.hinfo-value{font-family:'Playfair Display',serif;font-size:15px;color:var(--white)}
+.hinfo-sub{font-size:11px;color:rgba(255,255,255,.35);margin-top:3px}
+.hinfo.accent{background:rgba(201,168,76,.1);border-color:rgba(201,168,76,.22)}
+
+@media(max-width:900px){.hero-layout{grid-template-columns:1fr;gap:40px;padding:48px 0}.hero-right{display:none}.hero-stats{flex-wrap:wrap;gap:28px}}
+
+/* ——— WHY US ——— */
+#why{background:var(--ivory);padding:96px 0}
+.why-header{margin-bottom:60px}
+.features-wrap{background:var(--border);display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+@media(max-width:900px){.features-wrap{grid-template-columns:1fr}}
+.feat{background:var(--white);padding:40px 34px;transition:all .3s}
+.feat:hover{background:var(--navy)}
+.feat:hover .feat-title{color:var(--white)}
+.feat:hover .feat-body{color:rgba(255,255,255,.57)}
+.feat-icon{font-size:26px;margin-bottom:22px}
+.feat-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:600;color:var(--navy);margin-bottom:11px;transition:color .3s}
+.feat-body{font-size:14px;line-height:1.75;color:var(--slate);transition:color .3s}
+
+/* ——— SERVICES ——— */
+#services{background:var(--white);padding:96px 0}
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:56px}
+@media(max-width:768px){.services-grid{grid-template-columns:1fr}}
+.scard{border:1px solid var(--border);padding:38px;position:relative;overflow:hidden;cursor:pointer;transition:all .3s}
+.scard::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.scard:hover{border-color:var(--navy);transform:translateY(-3px);box-shadow:0 18px 52px rgba(11,29,58,.09)}
+.scard:hover::after{transform:scaleX(1)}
+.scard-num{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.scard-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--navy);margin-bottom:12px;line-height:1.22}
+.scard-body{font-size:14px;line-height:1.77;color:var(--slate);margin-bottom:22px}
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.cta-center{text-align:center;margin-top:46px}
+
+/* ——— COUNTRIES ——— */
+#countries{background:var(--navy);padding:96px 0}
+.country-tabs{display:flex;gap:0;margin-top:48px;border-bottom:1px solid rgba(255,255,255,.1);overflow-x:auto}
+.ctab{font-size:13px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.45);padding:12px 20px;cursor:pointer;border:none;background:none;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .2s;white-space:nowrap;font-family:'Inter',sans-serif}
+.ctab.active{color:var(--gold);border-bottom-color:var(--gold)}
+.ctab:hover:not(.active){color:rgba(255,255,255,.75)}
+.cpanel{display:none;margin-top:44px}
+.cpanel.active{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+@media(max-width:900px){.cpanel.active{grid-template-columns:1fr}}
+.c-title{font-family:'Playfair Display',serif;font-size:34px;color:var(--white);margin-bottom:6px}
+.c-sub{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:30px}
+.c-details{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px}
+.cdet{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);padding:17px}
+.cdet-label{font-size:10px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:7px}
+.cdet-value{font-family:'Playfair Display',serif;font-size:18px;color:var(--white);font-weight:600}
+.c-programs{list-style:none;display:flex;flex-direction:column;gap:0}
+.c-programs li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:14px;color:rgba(255,255,255,.67);display:flex;align-items:center;gap:10px}
+.c-programs li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.cvisual{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.18);padding:32px}
+.cflag{font-size:56px;margin-bottom:18px}
+.cquote{font-family:'Playfair Display',serif;font-size:16px;color:var(--white);line-height:1.65;font-style:italic}
+.c-checklist{margin-top:24px;padding-top:22px;border-top:1px solid rgba(255,255,255,.07)}
+.c-checklist-label{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.35);margin-bottom:12px}
+.c-check{font-size:13px;color:rgba(255,255,255,.65);display:flex;align-items:center;gap:8px;padding:4px 0}
+.c-check span{color:var(--gold)}
+
+/* ——— TESTIMONIALS ——— */
+#testimonials{background:var(--ivory);padding:96px 0}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+@media(max-width:900px){.tgrid{grid-template-columns:1fr}}
+.tcard{background:var(--white);border:1px solid var(--border);padding:34px;position:relative}
+.tcard::before{content:'\201C';font-family:'Playfair Display',serif;font-size:76px;color:var(--gold);opacity:.22;position:absolute;top:12px;right:20px;line-height:1}
+.tquote{font-size:14px;line-height:1.82;color:var(--slate);margin-bottom:26px;position:relative;z-index:1}
+.tauthor{display:flex;align-items:center;gap:13px}
+.tavatar{width:42px;height:42px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:14px;color:var(--gold);flex-shrink:0}
+.tname{font-weight:600;font-size:14px;color:var(--navy)}
+.tdetail{font-size:12px;color:var(--slate);margin-top:2px}
+
+/* ——— ABOUT ——— */
+#about{background:var(--white);padding:96px 0}
+.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+@media(max-width:900px){.about-layout{grid-template-columns:1fr}}
+.about-lead{font-size:15px;line-height:1.82;color:var(--slate);margin:22px 0}
+.astat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:36px}
+.astat{padding:22px;border:1px solid var(--border)}
+.astat-n{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--navy)}
+.astat-n em{color:var(--gold);font-style:normal}
+.astat-l{font-size:12px;color:var(--slate);margin-top:3px}
+.about-right{background:var(--navy);padding:44px}
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:28px}
+.tmember{background:rgba(255,255,255,.05);padding:18px;text-align:center}
+.tmavatar{width:52px;height:52px;border-radius:50%;background:rgba(201,168,76,.18);border:1.5px solid rgba(201,168,76,.35);margin:0 auto 11px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:16px;color:var(--gold)}
+.tmname{font-size:13px;font-weight:600;color:var(--white);margin-bottom:3px}
+.tmrole{font-size:11px;color:rgba(255,255,255,.42)}
+.about-contact{margin-top:30px;padding-top:22px;border-top:1px solid rgba(255,255,255,.08);font-size:13px;color:rgba(255,255,255,.45);line-height:2}
+
+/* ——— BOOKING ——— */
+#booking{background:var(--ivory);padding:96px 0}
+.booking-layout{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+@media(max-width:900px){.booking-layout{grid-template-columns:1fr}}
+.booking-lead{font-size:15px;line-height:1.8;color:var(--slate);margin:22px 0}
+.bfeatures{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:36px}
+.bfeat{display:flex;align-items:center;gap:11px;font-size:14px;color:var(--slate)}
+.bcheck{width:20px;height:20px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--navy);font-weight:700;flex-shrink:0}
+.slots-box{border:1px solid var(--border);padding:22px 24px;background:var(--white)}
+.slots-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-bottom:12px}
+.slots{display:flex;gap:8px;flex-wrap:wrap}
+.slot{font-size:12px;padding:8px 14px;cursor:pointer;border:1px solid var(--border);background:var(--white);color:var(--slate);transition:all .2s;font-family:'Inter',sans-serif}
+.slot.active{border-color:var(--gold);color:var(--navy)}
+.slot:hover{border-color:var(--navy);color:var(--navy)}
+.bform{background:var(--white);border:1px solid var(--border);padding:36px}
+.bform-title{font-family:'Playfair Display',serif;font-size:22px;color:var(--navy);margin-bottom:6px}
+.bform-sub{font-size:13px;color:var(--slate);margin-bottom:28px}
+.form-row{margin-bottom:17px}
+.form-row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:17px}
+.flabel{display:block;font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--navy);margin-bottom:7px}
+.finput{width:100%;padding:13px 15px;border:1px solid var(--border);background:var(--white);font-family:'Inter',sans-serif;font-size:14px;color:var(--navy);outline:none;transition:border-color .2s}
+.finput:focus{border-color:var(--navy)}
+.fselect{width:100%;padding:13px 15px;border:1px solid var(--border);background:var(--white);font-family:'Inter',sans-serif;font-size:14px;color:var(--navy);outline:none;appearance:none;cursor:pointer}
+.fselect:focus{border-color:var(--navy)}
+.success-msg{display:none;background:var(--ivory);border:1px solid var(--gold);padding:22px;text-align:center;margin-bottom:16px}
+.success-title{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:6px}
+.success-body{font-size:13px;color:var(--slate)}
+
+/* ——— BLOG ——— */
+#blog{background:var(--white);padding:96px 0}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+@media(max-width:900px){.blog-grid{grid-template-columns:1fr}}
+.bcard{background:var(--white);border:1px solid var(--border);overflow:hidden;cursor:pointer;transition:all .3s}
+.bcard:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(11,29,58,.08)}
+.bthumb{height:170px;background:var(--navy);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.bthumb-pattern{position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(201,168,76,.04) 0,rgba(201,168,76,.04) 1px,transparent 1px,transparent 50%);background-size:22px 22px}
+.bthumb-letter{font-family:'Playfair Display',serif;font-size:56px;font-weight:700;color:rgba(201,168,76,.18);position:absolute;bottom:10px;right:14px;line-height:1}
+.bcontent{padding:22px}
+.bcat{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.btitle{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);margin:8px 0 11px;line-height:1.35}
+.bexcerpt{font-size:13px;color:var(--slate);line-height:1.72}
+.bmeta{font-size:11px;color:var(--slate);margin-top:14px;padding-top:14px;border-top:1px solid var(--border)}
+
+/* ——— FAQ ——— */
+#faq{background:var(--ivory);padding:96px 0}
+.faq-layout{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+@media(max-width:900px){.faq-layout{grid-template-columns:1fr}}
+.faq-intro{font-size:14px;color:var(--slate);line-height:1.78;margin-top:18px}
+.faq-list{margin-top:0}
+.faqitem{border-bottom:1px solid var(--border)}
+.faqq{display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;font-family:'Playfair Display',serif;font-size:16px;color:var(--navy);gap:16px;user-select:none}
+.faqtoggle{width:26px;height:26px;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;color:var(--slate);transition:all .3s;font-family:'Inter',sans-serif;font-weight:300;line-height:1}
+.faqitem.open .faqtoggle{background:var(--navy);border-color:var(--navy);color:var(--gold);transform:rotate(45deg)}
+.faqa{max-height:0;overflow:hidden;transition:max-height .38s ease}
+.faqa-inner{font-size:14px;line-height:1.82;color:var(--slate);padding-bottom:22px}
+
+/* ——— CHATBOT ——— */
+#chat-widget{position:fixed;bottom:26px;right:26px;z-index:500}
+.chat-toggle-btn{width:54px;height:54px;border-radius:50%;background:var(--gold);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 4px 18px rgba(201,168,76,.38);transition:transform .25s}
+.chat-toggle-btn:hover{transform:scale(1.07)}
+.chat-box{display:none;position:absolute;bottom:70px;right:0;width:316px;background:var(--white);border:1px solid var(--border);box-shadow:0 18px 55px rgba(11,29,58,.14);flex-direction:column}
+.chat-box.open{display:flex}
+.chat-head{background:var(--navy);padding:15px 18px;display:flex;align-items:center;gap:11px}
+.chat-dot{width:7px;height:7px;border-radius:50%;background:#4CAF50;flex-shrink:0}
+.chat-head-title{font-size:14px;font-weight:600;color:var(--white)}
+.chat-head-sub{font-size:11px;color:rgba(255,255,255,.45)}
+.chat-msgs{height:250px;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:9px}
+.cmsg{font-size:13px;line-height:1.55;padding:9px 13px;max-width:88%}
+.cmsg.bot{background:var(--ivory);color:var(--navy);align-self:flex-start}
+.cmsg.user{background:var(--navy);color:var(--white);align-self:flex-end}
+.chat-chips{display:flex;flex-wrap:wrap;gap:5px;padding:0 14px 10px}
+.cchip{font-size:11px;padding:5px 10px;border:1px solid var(--border);background:var(--white);color:var(--navy);cursor:pointer;transition:all .2s;white-space:nowrap;font-family:'Inter',sans-serif}
+.cchip:hover{background:var(--navy);color:var(--white);border-color:var(--navy)}
+.chat-input-row{display:flex;border-top:1px solid var(--border)}
+.cinput{flex:1;border:none;padding:11px 14px;font-family:'Inter',sans-serif;font-size:13px;outline:none;color:var(--navy)}
+.csend{background:var(--gold);border:none;padding:11px 16px;cursor:pointer;font-size:16px;color:var(--navy);font-weight:700;transition:background .2s}
+.csend:hover{background:var(--gold2)}
+
+/* ——— WA BTN ——— */
+.wa-btn{position:fixed;bottom:92px;right:26px;z-index:499;width:50px;height:50px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 14px rgba(37,211,102,.32);transition:transform .25s;font-size:22px;text-decoration:none}
+.wa-btn:hover{transform:scale(1.07)}
+
+/* ——— MODAL ——— */
+.moverlay{display:none;position:fixed;inset:0;background:rgba(11,29,58,.88);z-index:1000;align-items:center;justify-content:center;padding:20px}
+.moverlay.open{display:flex}
+.modal{background:var(--white);max-width:520px;width:100%;padding:46px;position:relative;max-height:92vh;overflow-y:auto}
+.mclose{position:absolute;top:14px;right:18px;font-size:22px;background:none;border:none;cursor:pointer;color:var(--slate);font-family:'Inter',sans-serif;font-weight:300;line-height:1;transition:color .2s}
+.mclose:hover{color:var(--navy)}
+.mtitle{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.msub{font-size:14px;color:var(--slate);margin-bottom:30px}
+
+/* ——— FOOTER ——— */
+footer{background:var(--navy);padding:68px 0 36px;color:var(--white)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.07)}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+.flogo{font-family:'Playfair Display',serif;font-size:20px;color:var(--white);margin-bottom:14px}
+.flogo span{color:var(--gold)}
+.ftagline{font-size:13px;color:rgba(255,255,255,.46);line-height:1.72;margin-bottom:22px}
+.fsocials{display:flex;gap:10px}
+.fsocial{width:34px;height:34px;border:1px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;font-size:13px;cursor:pointer;transition:all .2s;color:rgba(255,255,255,.55);text-decoration:none}
+.fsocial:hover{border-color:var(--gold);color:var(--gold)}
+.fheading{font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.flinks{list-style:none;display:flex;flex-direction:column;gap:9px}
+.flinks a{font-size:13px;color:rgba(255,255,255,.5);cursor:pointer;transition:color .2s}
+.flinks a:hover{color:var(--gold)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;font-size:12px;color:rgba(255,255,255,.28);flex-wrap:wrap;gap:8px}
+
+/* cookie */
+#cookie{position:fixed;bottom:0;left:0;right:0;z-index:900;background:var(--navy);border-top:1px solid rgba(201,168,76,.2);padding:16px 48px;display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:13px;color:rgba(255,255,255,.65)}
+#cookie a{color:var(--gold);text-decoration:underline}
+#cookie.hidden{display:none}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="container nav-inner">
+    <div class="logo" onclick="smoothTo('hero')">Study<span>Abroad</span></div>
+    <ul class="nav-links">
+      <li><a onclick="smoothTo('services')">Services</a></li>
+      <li><a onclick="smoothTo('countries')">Countries</a></li>
+      <li><a onclick="smoothTo('about')">About</a></li>
+      <li><a onclick="smoothTo('blog')">Resources</a></li>
+      <li><a onclick="smoothTo('faq')">FAQ</a></li>
+      <li><button class="btn btn-gold btn-sm" onclick="openModal()" style="cursor:pointer">Book Free Consultation</button></li>
+    </ul>
+    <div class="nav-mob" onclick="alert('Menu: Services · Countries · About · Resources · FAQ · Book Consultation')">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-ring"></div>
+  <div class="container">
+    <div class="hero-layout">
+      <div>
+        <div class="hero-badge">Trusted by 2,000+ Indian Students</div>
+        <h1 class="hero-h1">Your Journey<br/>Abroad Starts <em>Here</em></h1>
+        <p class="hero-lead">From choosing your dream career abroad to building your life overseas — we guide you every step of the way.</p>
+        <div class="hero-actions">
+          <button class="btn btn-gold" onclick="openModal()">Book Free Consultation</button>
+          <button class="btn btn-ghost" onclick="smoothTo('services')">Explore Programs</button>
+        </div>
+        <div class="hero-stats">
+          <div><div class="stat-n">2000<em>+</em></div><div class="stat-l">Students Placed</div></div>
+          <div><div class="stat-n">18<em>+</em></div><div class="stat-l">Countries</div></div>
+          <div><div class="stat-n">94<em>%</em></div><div class="stat-l">Visa Success</div></div>
+          <div><div class="stat-n">7</div><div class="stat-l">Years Experience</div></div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hcard">
+          <div class="hcard-title">Where would you like to study?</div>
+          <div class="hcard-sub">Choose your destination and we'll build a personalised roadmap</div>
+          <div class="dest-grid">
+            <div class="dest-item" onclick="smoothTo('countries');showCountry('de',document.querySelectorAll('.ctab')[0])"><div class="dest-flag">🇩🇪</div><div class="dest-name">Germany</div></div>
+            <div class="dest-item" onclick="smoothTo('countries');showCountry('rs',document.querySelectorAll('.ctab')[1])"><div class="dest-flag">🇷🇸</div><div class="dest-name">Serbia</div></div>
+            <div class="dest-item" onclick="smoothTo('countries');showCountry('it',document.querySelectorAll('.ctab')[4])"><div class="dest-flag">🇮🇹</div><div class="dest-name">Italy</div></div>
+            <div class="dest-item" onclick="smoothTo('countries');showCountry('pl',document.querySelectorAll('.ctab')[2])"><div class="dest-flag">🇵🇱</div><div class="dest-name">Poland</div></div>
+            <div class="dest-item" onclick="smoothTo('countries');showCountry('hu',document.querySelectorAll('.ctab')[3])"><div class="dest-flag">🇭🇺</div><div class="dest-name">Hungary</div></div>
+            <div class="dest-item" onclick="smoothTo('countries');showCountry('ro',document.querySelectorAll('.ctab')[5])"><div class="dest-flag">🇷🇴</div><div class="dest-name">Romania</div></div>
+          </div>
+        </div>
+        <div class="hinfo-row">
+          <div class="hinfo accent">
+            <div class="hinfo-label">Next Session</div>
+            <div class="hinfo-value">Tomorrow 10 AM</div>
+            <div class="hinfo-sub">5 slots remaining</div>
+          </div>
+          <div class="hinfo">
+            <div class="hinfo-label">This Month</div>
+            <div class="hinfo-value">48 Students</div>
+            <div class="hinfo-sub">enrolled abroad</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="container">
+    <div class="why-header">
+      <div class="eyebrow">Why Choose Us</div>
+      <div class="gold-bar"></div>
+      <h2 class="section-title">A Partner for Every Step<br/>of Your Journey</h2>
+    </div>
+    <div class="features-wrap">
+      <div class="feat"><div class="feat-icon">🎯</div><h3 class="feat-title">Personalised One-on-One Counselling</h3><p class="feat-body">Every student gets a dedicated advisor who understands your academic background, budget, and career ambitions — not a generic checklist.</p></div>
+      <div class="feat"><div class="feat-icon">🔍</div><h3 class="feat-title">Completely Transparent Process</h3><p class="feat-body">No hidden fees. No inflated promises. We tell you exactly what to expect — costs, timelines, and realistic admission chances — from day one.</p></div>
+      <div class="feat"><div class="feat-icon">📋</div><h3 class="feat-title">End-to-End Documentation Support</h3><p class="feat-body">From application essays to visa paperwork, we review, prepare, and submit documents with you — ensuring every detail is exactly right.</p></div>
+      <div class="feat"><div class="feat-icon">🌐</div><h3 class="feat-title">Visa &amp; Embassy Expertise</h3><p class="feat-body">Our 94% visa success rate is earned through meticulous preparation. We know every Schengen and German national visa requirement inside out.</p></div>
+      <div class="feat"><div class="feat-icon">🏠</div><h3 class="feat-title">Settlement &amp; Life Abroad Assistance</h3><p class="feat-body">We stay with you after you land — housing, health insurance, bank accounts, city registration, and community support for your first months.</p></div>
+      <div class="feat"><div class="feat-icon">💼</div><h3 class="feat-title">Career Pathway Planning</h3><p class="feat-body">Study is just the beginning. We help plan your path from student to professional — career counselling, job search, and long-term residency strategy.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="eyebrow">What We Offer</div>
+    <div class="gold-bar"></div>
+    <h2 class="section-title">Programs We Specialise In</h2>
+    <div class="services-grid">
+      <div class="scard" onclick="openModal()">
+        <div class="scard-num">01 — Medicine Abroad</div>
+        <h3 class="scard-title">MBBS &amp; MD in Europe</h3>
+        <p class="scard-body">Study medicine in NMC-recognised universities across Serbia, Hungary, Poland, Romania, and Italy at a fraction of Indian private college costs. English-medium programs with integrated clinical training and a direct path to FMGE/USMLE.</p>
+        <div class="tags"><span class="tag">Serbia</span><span class="tag">Hungary</span><span class="tag">Poland</span><span class="tag">Romania</span><span class="tag">Italy</span><span class="tag">6 Years</span></div>
+      </div>
+      <div class="scard" onclick="openModal()">
+        <div class="scard-num">02 — Germany Pathway</div>
+        <h3 class="scard-title">Ausbildung, Study &amp; Settlement</h3>
+        <p class="scard-body">Germany's vocational training system is one of the best routes to earn, learn, and build a European career. We guide you from language preparation to visa, placement, and long-term permanent residency — completely end-to-end.</p>
+        <div class="tags"><span class="tag">Ausbildung</span><span class="tag">German Language</span><span class="tag">Visa</span><span class="tag">PR Pathway</span></div>
+      </div>
+      <div class="scard" onclick="openModal()">
+        <div class="scard-num">03 — Higher Education</div>
+        <h3 class="scard-title">Bachelor's &amp; Master's Degrees</h3>
+        <p class="scard-body">Engineering, business, computer science, law, architecture — we place students in affordable, globally ranked universities across Europe with scholarship guidance, IELTS/TOEFL prep, and full application support.</p>
+        <div class="tags"><span class="tag">Bachelor's</span><span class="tag">Master's</span><span class="tag">Scholarships</span><span class="tag">STEM &amp; Business</span></div>
+      </div>
+      <div class="scard" onclick="openModal()">
+        <div class="scard-num">04 — Visa &amp; Relocation</div>
+        <h3 class="scard-title">Visa Consulting &amp; Life Setup Abroad</h3>
+        <p class="scard-body">From student visas to work permits and family reunification — we handle documentation, embassy preparation, and arrival logistics so you can focus on building your new life abroad from day one.</p>
+        <div class="tags"><span class="tag">Student Visa</span><span class="tag">Work Permit</span><span class="tag">Housing</span><span class="tag">Insurance</span></div>
+      </div>
+    </div>
+    <div class="cta-center"><button class="btn btn-gold" onclick="openModal()">Book Free Consultation</button></div>
+  </div>
+</section>
+
+<!-- COUNTRIES -->
+<section id="countries">
+  <div class="container">
+    <div class="eyebrow" style="color:var(--gold)">Destinations</div>
+    <div class="gold-bar"></div>
+    <h2 class="section-title white">Countries We Place Students In</h2>
+    <div class="country-tabs">
+      <button class="ctab active" onclick="showCountry('de',this)">🇩🇪 Germany</button>
+      <button class="ctab" onclick="showCountry('rs',this)">🇷🇸 Serbia</button>
+      <button class="ctab" onclick="showCountry('pl',this)">🇵🇱 Poland</button>
+      <button class="ctab" onclick="showCountry('hu',this)">🇭🇺 Hungary</button>
+      <button class="ctab" onclick="showCountry('it',this)">🇮🇹 Italy</button>
+      <button class="ctab" onclick="showCountry('ro',this)">🇷🇴 Romania</button>
+    </div>
+
+    <div id="panel-de" class="cpanel active">
+      <div>
+        <div class="c-title">Germany</div>
+        <div class="c-sub">Europe's economic powerhouse — study, work, and build a life</div>
+        <div class="c-details">
+          <div class="cdet"><div class="cdet-label">Annual Tuition</div><div class="cdet-value">€0 – €3,000</div></div>
+          <div class="cdet"><div class="cdet-label">Living Costs</div><div class="cdet-value">€800 – €1,200/mo</div></div>
+          <div class="cdet"><div class="cdet-label">Visa Type</div><div class="cdet-value">National D Visa</div></div>
+          <div class="cdet"><div class="cdet-label">PR Eligibility</div><div class="cdet-value">After 2–5 Years</div></div>
+        </div>
+        <ul class="c-programs">
+          <li>Ausbildung — Dual Vocational Training (Nursing, IT, Hospitality, Trades)</li>
+          <li>Bachelor's degrees at public universities (English &amp; German medium)</li>
+          <li>Master's programs in Engineering, Business, Computer Science</li>
+          <li>German language preparation (A1 to B2) before departure</li>
+          <li>Post-study work visa &amp; job seeker visa support</li>
+        </ul>
+      </div>
+      <div class="cvisual">
+        <div class="cflag">🇩🇪</div>
+        <div class="cquote">"Germany is the only country where you can earn while you learn, pay near-zero tuition, and build a European career within 3 years."</div>
+        <div class="c-checklist">
+          <div class="c-checklist-label">Our Germany Services Include</div>
+          <div class="c-check"><span>✓</span> Language training coordination</div>
+          <div class="c-check"><span>✓</span> Ausbildung placement assistance</div>
+          <div class="c-check"><span>✓</span> Visa application preparation</div>
+          <div class="c-check"><span>✓</span> Housing &amp; city registration</div>
+          <div class="c-check"><span>✓</span> Health insurance setup</div>
+        </div>
+        <button class="btn btn-gold" style="margin-top:26px;width:100%;justify-content:center" onclick="openModal()">Apply for Germany</button>
+      </div>
+    </div>
+
+    <div id="panel-rs" class="cpanel">
+      <div>
+        <div class="c-title">Serbia</div>
+        <div class="c-sub">Affordable MBBS in the heart of Europe</div>
+        <div class="c-details">
+          <div class="cdet"><div class="cdet-label">Annual Tuition</div><div class="cdet-value">€5,000 – €7,000</div></div>
+          <div class="cdet"><div class="cdet-label">Living Costs</div><div class="cdet-value">€400 – €600/mo</div></div>
+          <div class="cdet"><div class="cdet-label">Duration</div><div class="cdet-value">6 Years (MBBS)</div></div>
+          <div class="cdet"><div class="cdet-label">Recognition</div><div class="cdet-value">MCI / NMC</div></div>
+        </div>
+        <ul class="c-programs">
+          <li>MBBS (Medicine) — English medium at Kragujevac, Novi Sad, Belgrade</li>
+          <li>Dentistry (BDS) programs in English</li>
+          <li>NEET qualification sufficient — no separate entrance exam</li>
+          <li>Clinical training integrated from Year 3</li>
+          <li>FMGE &amp; USMLE preparation support throughout the program</li>
+        </ul>
+      </div>
+      <div class="cvisual">
+        <div class="cflag">🇷🇸</div>
+        <div class="cquote">"Serbia offers world-class medical education at the most accessible cost in Europe — our most popular destination for MBBS aspirants."</div>
+        <div class="c-checklist">
+          <div class="c-checklist-label">Why Serbia</div>
+          <div class="c-check"><span>✓</span> Most affordable MBBS in Europe</div>
+          <div class="c-check"><span>✓</span> NMC recognised universities</div>
+          <div class="c-check"><span>✓</span> Strong Indian student community</div>
+          <div class="c-check"><span>✓</span> No IELTS required</div>
+        </div>
+        <button class="btn btn-gold" style="margin-top:26px;width:100%;justify-content:center" onclick="openModal()">Apply for Serbia</button>
+      </div>
+    </div>
+
+    <div id="panel-pl" class="cpanel">
+      <div>
+        <div class="c-title">Poland</div>
+        <div class="c-sub">EU-recognised degrees with strong clinical training</div>
+        <div class="c-details">
+          <div class="cdet"><div class="cdet-label">Annual Tuition</div><div class="cdet-value">€7,000 – €12,000</div></div>
+          <div class="cdet"><div class="cdet-label">Living Costs</div><div class="cdet-value">€500 – €800/mo</div></div>
+          <div class="cdet"><div class="cdet-label">Duration</div><div class="cdet-value">6 Years (MBBS)</div></div>
+          <div class="cdet"><div class="cdet-label">Language</div><div class="cdet-value">English Medium</div></div>
+        </div>
+        <ul class="c-programs">
+          <li>Medicine at Warsaw, Wrocław, and Kraków medical universities</li>
+          <li>Dentistry and Pharmacy programs available</li>
+          <li>Bachelor's and Master's in Engineering, IT, and Business</li>
+          <li>EU-recognised degree — valid for medical practice across Europe</li>
+        </ul>
+      </div>
+      <div class="cvisual">
+        <div class="cflag">🇵🇱</div>
+        <div class="cquote">"Poland's medical universities have a long tradition of training international students and offer a clear pathway to EU medical registration."</div>
+        <button class="btn btn-gold" style="margin-top:26px;width:100%;justify-content:center" onclick="openModal()">Apply for Poland</button>
+      </div>
+    </div>
+
+    <div id="panel-hu" class="cpanel">
+      <div>
+        <div class="c-title">Hungary</div>
+        <div class="c-sub">Prestigious medical universities with a global reputation</div>
+        <div class="c-details">
+          <div class="cdet"><div class="cdet-label">Annual Tuition</div><div class="cdet-value">€12,000 – €16,000</div></div>
+          <div class="cdet"><div class="cdet-label">Living Costs</div><div class="cdet-value">€600 – €900/mo</div></div>
+          <div class="cdet"><div class="cdet-label">Duration</div><div class="cdet-value">6 Years (MBBS)</div></div>
+          <div class="cdet"><div class="cdet-label">Recognition</div><div class="cdet-value">WHO / NMC</div></div>
+        </div>
+        <ul class="c-programs">
+          <li>Semmelweis University — one of Europe's oldest medical institutions</li>
+          <li>Universities of Debrecen, Pécs, and Szeged — all WHO recognised</li>
+          <li>General Medicine, Dentistry, Pharmacy in English</li>
+          <li>High USMLE Step 1 pass rates among Indian alumni</li>
+        </ul>
+      </div>
+      <div class="cvisual">
+        <div class="cflag">🇭🇺</div>
+        <div class="cquote">"Hungary is home to some of the most prestigious medical institutions in Central Europe — a strong choice for students aiming at global careers."</div>
+        <button class="btn btn-gold" style="margin-top:26px;width:100%;justify-content:center" onclick="openModal()">Apply for Hungary</button>
+      </div>
+    </div>
+
+    <div id="panel-it" class="cpanel">
+      <div>
+        <div class="c-title">Italy</div>
+        <div class="c-sub">European prestige with a vibrant cultural experience</div>
+        <div class="c-details">
+          <div class="cdet"><div class="cdet-label">Annual Tuition</div><div class="cdet-value">€3,000 – €8,000</div></div>
+          <div class="cdet"><div class="cdet-label">Living Costs</div><div class="cdet-value">€700 – €1,100/mo</div></div>
+          <div class="cdet"><div class="cdet-label">Language</div><div class="cdet-value">English Available</div></div>
+          <div class="cdet"><div class="cdet-label">Recognition</div><div class="cdet-value">EU / WHO</div></div>
+        </div>
+        <ul class="c-programs">
+          <li>MBBS (Medicine and Surgery) at Milan, Bologna, and Rome</li>
+          <li>IMAT entrance test preparation guidance included</li>
+          <li>Architecture, Design, and Fashion programs at world-class institutes</li>
+          <li>Engineering and Technology degrees in English</li>
+        </ul>
+      </div>
+      <div class="cvisual">
+        <div class="cflag">🇮🇹</div>
+        <div class="cquote">"Italy offers exceptional value — public university fees with world-class medical training and the bonus of studying in one of Europe's most vibrant cultures."</div>
+        <button class="btn btn-gold" style="margin-top:26px;width:100%;justify-content:center" onclick="openModal()">Apply for Italy</button>
+      </div>
+    </div>
+
+    <div id="panel-ro" class="cpanel">
+      <div>
+        <div class="c-title">Romania</div>
+        <div class="c-sub">Budget-friendly MBBS with full EU-standard training</div>
+        <div class="c-details">
+          <div class="cdet"><div class="cdet-label">Annual Tuition</div><div class="cdet-value">€4,500 – €6,500</div></div>
+          <div class="cdet"><div class="cdet-label">Living Costs</div><div class="cdet-value">€350 – €550/mo</div></div>
+          <div class="cdet"><div class="cdet-label">Duration</div><div class="cdet-value">6 Years</div></div>
+          <div class="cdet"><div class="cdet-label">Recognition</div><div class="cdet-value">NMC / EU</div></div>
+        </div>
+        <ul class="c-programs">
+          <li>Medicine (MBBS) at Cluj-Napoca, Bucharest, Timișoara, and Iași</li>
+          <li>English-medium programs at all major universities</li>
+          <li>Lowest total cost among European MBBS destinations</li>
+          <li>EU-recognised degree — practise medicine anywhere in Europe</li>
+        </ul>
+      </div>
+      <div class="cvisual">
+        <div class="cflag">🇷🇴</div>
+        <div class="cquote">"Romania offers the most economical path to an EU-recognised MBBS — ideal for students who want quality without compromising their family's financial wellbeing."</div>
+        <button class="btn btn-gold" style="margin-top:26px;width:100%;justify-content:center" onclick="openModal()">Apply for Romania</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="eyebrow">Student Stories</div>
+    <div class="gold-bar"></div>
+    <h2 class="section-title">What Our Students Say</h2>
+    <div class="tgrid">
+      <div class="tcard">
+        <p class="tquote">I had no idea where to start when I decided to study medicine abroad. StudyAbroad gave me a clear path — from university selection in Serbia to visa approval. I'm now in my second year of MBBS in Kragujevac and couldn't be happier.</p>
+        <div class="tauthor"><div class="tavatar">PK</div><div><div class="tname">Priya Kapoor</div><div class="tdetail">🇷🇸 MBBS, University of Kragujevac</div></div></div>
+      </div>
+      <div class="tcard">
+        <p class="tquote">I came for Ausbildung in Germany knowing nothing about the system. They arranged my language training, handled my visa, and helped me find accommodation in Munich. Now I'm earning while training as a nurse. Life-changing.</p>
+        <div class="tauthor"><div class="tavatar">RS</div><div><div class="tname">Rahul Singh</div><div class="tdetail">🇩🇪 Ausbildung — Nursing, Munich</div></div></div>
+      </div>
+      <div class="tcard">
+        <p class="tquote">After my NEET score, I had resigned myself to a private Indian college. Then I found StudyAbroad. They showed me that MBBS in Poland was not just affordable but internationally respected. My family saved over ₹40 lakhs in total.</p>
+        <div class="tauthor"><div class="tavatar">AM</div><div><div class="tname">Ananya Mehta</div><div class="tdetail">🇵🇱 MBBS, Medical University of Warsaw</div></div></div>
+      </div>
+      <div class="tcard">
+        <p class="tquote">What makes them different is they don't disappear after you land. When I had trouble with apartment hunting in Budapest, they connected me with a community of Indian students already there. That support made all the difference.</p>
+        <div class="tauthor"><div class="tavatar">VN</div><div><div class="tname">Vikram Nair</div><div class="tdetail">🇭🇺 MBBS, Semmelweis University</div></div></div>
+      </div>
+      <div class="tcard">
+        <p class="tquote">My dream was Italy — studying architecture in Rome. Everyone told me it was too complicated. StudyAbroad handled the IMAT prep guidance, the visa, and even the pre-departure checklist. I'm writing this from my dorm in Rome.</p>
+        <div class="tauthor"><div class="tavatar">SG</div><div><div class="tname">Sneha Gupta</div><div class="tdetail">🇮🇹 Architecture, Sapienza University</div></div></div>
+      </div>
+      <div class="tcard">
+        <p class="tquote">The transparency was what I valued most. No false promises. They told me exactly what to expect, helped me prepare for every step, and were available on WhatsApp whenever I had a panic at 11pm. Truly outstanding service.</p>
+        <div class="tauthor"><div class="tavatar">DT</div><div><div class="tname">Divya Tiwari</div><div class="tdetail">🇩🇪 Master's, Technical University of Munich</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-layout">
+      <div>
+        <div class="eyebrow">About Us</div>
+        <div class="gold-bar"></div>
+        <h2 class="section-title" style="font-size:40px">We Went Abroad.<br/>We Know the Way.</h2>
+        <p class="about-lead">StudyAbroad was founded by consultants who navigated the same journey our students are beginning. We've lived in Germany, studied in Serbia, and built careers across Europe. That firsthand experience is the foundation of every recommendation we give.</p>
+        <p style="font-size:15px;line-height:1.8;color:var(--slate);margin-bottom:28px">We are not a commission-driven admissions agency. We are paid by students, for students — which means our only incentive is to find the best path for you, not the most profitable one for us.</p>
+        <button class="btn btn-outline" onclick="smoothTo('booking')">Book a Consultation</button>
+        <div class="astat-grid">
+          <div class="astat"><div class="astat-n">2000<em>+</em></div><div class="astat-l">Students Successfully Placed</div></div>
+          <div class="astat"><div class="astat-n">94<em>%</em></div><div class="astat-l">Visa Success Rate</div></div>
+          <div class="astat"><div class="astat-n">18<em>+</em></div><div class="astat-l">Partner Countries</div></div>
+          <div class="astat"><div class="astat-n">7</div><div class="astat-l">Years of Experience</div></div>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="eyebrow" style="color:var(--gold)">Meet Our Team</div>
+        <div class="team-grid">
+          <div class="tmember"><div class="tmavatar">AR</div><div class="tmname">Arjun Rao</div><div class="tmrole">Founder &amp; Germany Expert</div></div>
+          <div class="tmember"><div class="tmavatar">NP</div><div class="tmname">Neha Patel</div><div class="tmrole">Medical Admissions Head</div></div>
+          <div class="tmember"><div class="tmavatar">KM</div><div class="tmname">Karan Mehta</div><div class="tmrole">Visa &amp; Documentation</div></div>
+          <div class="tmember"><div class="tmavatar">SB</div><div class="tmname">Sia Bose</div><div class="tmrole">Student Relations</div></div>
+        </div>
+        <div class="about-contact">
+          📍 Offices in India, Germany &amp; Serbia<br/>
+          📞 Mon – Sat &nbsp;|&nbsp; 9 AM – 8 PM IST<br/>
+          ✉️ hello@studyabroad.in
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+  <div class="container">
+    <div class="booking-layout">
+      <div>
+        <div class="eyebrow">Free Consultation</div>
+        <div class="gold-bar"></div>
+        <h2 class="section-title" style="font-size:40px">Book Your Free<br/>45-Minute Session</h2>
+        <p class="booking-lead">No sales pitch. No obligation. Just an honest conversation about your goals, your situation, and the realistic options available — from someone who has actually been through it.</p>
+        <ul class="bfeatures">
+          <li><div class="bcheck">✓</div>One-on-one with a senior counsellor</li>
+          <li><div class="bcheck">✓</div>University and country recommendations for your profile</li>
+          <li><div class="bcheck">✓</div>Honest cost breakdown and financial planning</li>
+          <li><div class="bcheck">✓</div>Visa pathway and realistic timeline discussion</li>
+          <li><div class="bcheck">✓</div>Confirmation email with Google Meet link</li>
+        </ul>
+        <div class="slots-box">
+          <div class="slots-label">Available Slots This Week</div>
+          <div class="slots">
+            <div class="slot active" onclick="selectSlot(this)">Mon 10 AM</div>
+            <div class="slot" onclick="selectSlot(this)">Mon 2 PM</div>
+            <div class="slot" onclick="selectSlot(this)">Wed 11 AM</div>
+            <div class="slot" onclick="selectSlot(this)">Thu 4 PM</div>
+            <div class="slot" onclick="selectSlot(this)">Sat 9 AM</div>
+            <div class="slot" onclick="selectSlot(this)">Sat 11 AM</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="bform" id="bookingFormBlock">
+          <div class="bform-title">Reserve Your Spot</div>
+          <div class="bform-sub">All fields required. We respond within 2 hours.</div>
+          <div class="form-row2">
+            <div><label class="flabel">First Name</label><input class="finput" type="text" placeholder="Priya" /></div>
+            <div><label class="flabel">Last Name</label><input class="finput" type="text" placeholder="Sharma" /></div>
+          </div>
+          <div class="form-row"><label class="flabel">Email Address</label><input class="finput" type="email" placeholder="priya@example.com" /></div>
+          <div class="form-row"><label class="flabel">Phone Number</label><input class="finput" type="tel" placeholder="+91 98765 43210" /></div>
+          <div class="form-row"><label class="flabel">I Am Interested In</label>
+            <select class="fselect">
+              <option value="">Select a program</option>
+              <option>MBBS / Medicine Abroad</option>
+              <option>Ausbildung in Germany</option>
+              <option>Bachelor's Degree Abroad</option>
+              <option>Master's Degree Abroad</option>
+              <option>Work Visa / Career Abroad</option>
+              <option>Not sure yet — need guidance</option>
+            </select>
+          </div>
+          <div class="form-row"><label class="flabel">Preferred Country</label>
+            <select class="fselect">
+              <option value="">Select a country</option>
+              <option>Germany</option><option>Serbia</option><option>Poland</option>
+              <option>Hungary</option><option>Italy</option><option>Romania</option>
+              <option>Not decided yet</option>
+            </select>
+          </div>
+          <div class="success-msg" id="inlineSuccess">
+            <div class="success-title">🎉 You're booked!</div>
+            <div class="success-body">We've sent a Google Meet link to your email. Our counsellor will confirm within 2 hours.</div>
+          </div>
+          <button class="btn btn-gold" style="width:100%;justify-content:center;padding:15px" onclick="submitInline()">Confirm Free Consultation →</button>
+          <p style="font-size:11px;color:var(--slate);text-align:center;margin-top:13px">No payment required. Cancel anytime.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="container">
+    <div class="eyebrow">Resources &amp; Guides</div>
+    <div class="gold-bar"></div>
+    <h2 class="section-title">Guides for Indian Students</h2>
+    <div class="blog-grid">
+      <div class="bcard">
+        <div class="bthumb"><div class="bthumb-pattern"></div><div class="bthumb-letter">MB</div></div>
+        <div class="bcontent">
+          <div class="bcat">Medicine Abroad</div>
+          <h3 class="btitle">How Indian Students Can Study MBBS Abroad in 2025</h3>
+          <p class="bexcerpt">A complete guide to NMC-recognised MBBS programs, eligibility, cost comparison, and the step-by-step application process.</p>
+          <div class="bmeta">8 min read · May 2025</div>
+        </div>
+      </div>
+      <div class="bcard">
+        <div class="bthumb"><div class="bthumb-pattern"></div><div class="bthumb-letter">DE</div></div>
+        <div class="bcontent">
+          <div class="bcat">Germany</div>
+          <h3 class="btitle">The Complete Ausbildung Guide for Indian Students</h3>
+          <p class="bexcerpt">What Ausbildung actually is, which sectors are hiring, how much you earn, language requirements, and how to apply from India.</p>
+          <div class="bmeta">12 min read · April 2025</div>
+        </div>
+      </div>
+      <div class="bcard">
+        <div class="bthumb"><div class="bthumb-pattern"></div><div class="bthumb-letter">€</div></div>
+        <div class="bcontent">
+          <div class="bcat">Cost &amp; Finance</div>
+          <h3 class="btitle">Real Cost of Studying Medicine in Europe — Country by Country</h3>
+          <p class="bexcerpt">Tuition, living costs, insurance, and hidden expenses — the honest numbers for Serbia, Poland, Hungary, Romania, and Italy.</p>
+          <div class="bmeta">10 min read · March 2025</div>
+        </div>
+      </div>
+    </div>
+    <div class="cta-center" style="margin-top:36px"><button class="btn btn-outline">View All Articles</button></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-layout">
+      <div>
+        <div class="eyebrow">FAQ</div>
+        <div class="gold-bar"></div>
+        <h2 class="section-title">Answers to Every Question Indian Students Ask</h2>
+        <p class="faq-intro">Can't find what you're looking for? Chat with our AI assistant or book a free call — we'll answer everything in detail, honestly.</p>
+        <button class="btn btn-outline" style="margin-top:26px" onclick="openChatbot()">Ask the AI Assistant</button>
+      </div>
+      <div class="faq-list">
+        <div class="faqitem">
+          <div class="faqq" onclick="toggleFaq(this)">Is MBBS from Europe valid to practise in India?<div class="faqtoggle">+</div></div>
+          <div class="faqa"><div class="faqa-inner">Yes. All universities we partner with are NMC (formerly MCI) recognised. After graduating, you take the FMGE exam to obtain your Indian medical licence. We help you prepare for FMGE from Day 1 of your studies abroad.</div></div>
+        </div>
+        <div class="faqitem">
+          <div class="faqq" onclick="toggleFaq(this)">What NEET score do I need for MBBS abroad?<div class="faqtoggle">+</div></div>
+          <div class="faqa"><div class="faqa-inner">Most European countries require you to clear the NEET cutoff (50th percentile) but do not require a very high rank for admission. Serbia, Romania, and Hungary typically work with scores from 400 upwards. We assess your profile and suggest the most realistic options honestly.</div></div>
+        </div>
+        <div class="faqitem">
+          <div class="faqq" onclick="toggleFaq(this)">What is Ausbildung and how is it different from a degree?<div class="faqtoggle">+</div></div>
+          <div class="faqa"><div class="faqa-inner">Ausbildung is Germany's dual vocational training system — you work 3–4 days a week at a company (earning €700–€1,200/month) while attending vocational school for the remaining days. It takes 2–3 years. It's ideal if you want to enter the German workforce quickly, earn while you learn, and build a path to permanent residency. Whether it's better than a degree depends entirely on your career goals — we help you decide.</div></div>
+        </div>
+        <div class="faqitem">
+          <div class="faqq" onclick="toggleFaq(this)">How long does the visa process take?<div class="faqtoggle">+</div></div>
+          <div class="faqa"><div class="faqa-inner">For Germany (National D Visa), processing typically takes 8–12 weeks from submission. For Schengen countries like Poland and Hungary, student visa processing takes 4–10 weeks. We begin visa preparation 4–5 months before your departure to ensure there's no last-minute risk.</div></div>
+        </div>
+        <div class="faqitem">
+          <div class="faqq" onclick="toggleFaq(this)">Do you charge the student or the university?<div class="faqtoggle">+</div></div>
+          <div class="faqa"><div class="faqa-inner">We charge only the student — never a university commission. This means our recommendations are entirely based on what's best for your profile, not what earns us more. Our fee structure is transparent and disclosed before you sign anything.</div></div>
+        </div>
+        <div class="faqitem">
+          <div class="faqq" onclick="toggleFaq(this)">Can my parents visit me while I study abroad?<div class="faqtoggle">+</div></div>
+          <div class="faqa"><div class="faqa-inner">Yes. Indian parents can apply for a Schengen or national visit visa for most European countries. We advise families on the correct visa category, required documentation, and the best timing to apply. Many of our students have had their families visit within the first year of studies.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="flogo">Study<span>Abroad</span></div>
+        <div class="ftagline">From choosing your dream career abroad to building your life overseas — we guide you every step of the way. Trusted by 2,000+ Indian students since 2017.</div>
+        <div class="fsocials">
+          <a class="fsocial" href="#">in</a>
+          <a class="fsocial" href="#">ig</a>
+          <a class="fsocial" href="#">fb</a>
+          <a class="fsocial" href="#">yt</a>
+        </div>
+      </div>
+      <div>
+        <div class="fheading">Services</div>
+        <ul class="flinks">
+          <li><a onclick="smoothTo('services')">MBBS Abroad</a></li>
+          <li><a onclick="smoothTo('services')">Germany Ausbildung</a></li>
+          <li><a onclick="smoothTo('services')">Bachelor's Programs</a></li>
+          <li><a onclick="smoothTo('services')">Master's Programs</a></li>
+          <li><a onclick="smoothTo('services')">Visa Consulting</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="fheading">Countries</div>
+        <ul class="flinks">
+          <li><a onclick="showCountry('de',document.querySelectorAll('.ctab')[0]);smoothTo('countries')">Germany</a></li>
+          <li><a onclick="showCountry('rs',document.querySelectorAll('.ctab')[1]);smoothTo('countries')">Serbia</a></li>
+          <li><a onclick="showCountry('pl',document.querySelectorAll('.ctab')[2]);smoothTo('countries')">Poland</a></li>
+          <li><a onclick="showCountry('hu',document.querySelectorAll('.ctab')[3]);smoothTo('countries')">Hungary</a></li>
+          <li><a onclick="showCountry('it',document.querySelectorAll('.ctab')[4]);smoothTo('countries')">Italy</a></li>
+          <li><a onclick="showCountry('ro',document.querySelectorAll('.ctab')[5]);smoothTo('countries')">Romania</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="fheading">Company</div>
+        <ul class="flinks">
+          <li><a onclick="smoothTo('about')">About Us</a></li>
+          <li><a onclick="smoothTo('blog')">Resources &amp; Blog</a></li>
+          <li><a onclick="smoothTo('testimonials')">Student Stories</a></li>
+          <li><a onclick="openModal()">Book a Consultation</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 StudyAbroad. All rights reserved.</span>
+      <span>hello@studyabroad.in &nbsp;·&nbsp; +91 98765 00000</span>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="moverlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <button class="mclose" onclick="closeModal()">×</button>
+    <div class="mtitle">Book Free Consultation</div>
+    <div class="msub">45 minutes · No obligation · Honest guidance</div>
+    <div id="mFormWrap">
+      <div class="form-row2">
+        <div><label class="flabel">First Name</label><input class="finput" type="text" /></div>
+        <div><label class="flabel">Last Name</label><input class="finput" type="text" /></div>
+      </div>
+      <div class="form-row"><label class="flabel">Email</label><input class="finput" type="email" /></div>
+      <div class="form-row"><label class="flabel">Phone</label><input class="finput" type="tel" /></div>
+      <div class="form-row"><label class="flabel">Interested In</label>
+        <select class="fselect"><option>Select a program</option><option>MBBS / Medicine</option><option>Ausbildung Germany</option><option>Bachelor's Degree</option><option>Master's Degree</option><option>Work Visa</option><option>Not sure yet</option></select>
+      </div>
+      <button class="btn btn-gold" style="width:100%;justify-content:center;padding:14px;margin-top:6px" onclick="submitModal()">Request My Free Session →</button>
+      <p style="font-size:11px;color:var(--slate);text-align:center;margin-top:12px">We confirm within 2 hours by email or WhatsApp.</p>
+    </div>
+    <div class="success-msg" id="mSuccess">
+      <div class="success-title">✅ You're all set!</div>
+      <div class="success-body" style="margin-top:7px">Thank you! A Google Meet link is on its way to your email. Check spam if you don't see it in 5 minutes.</div>
+    </div>
+  </div>
+</div>
+
+<!-- AI CHATBOT -->
+<div id="chat-widget">
+  <div class="chat-box" id="chatBox">
+    <div class="chat-head">
+      <div class="chat-dot"></div>
+      <div><div class="chat-head-title">StudyAbroad Assistant</div><div class="chat-head-sub">AI-powered · Usually replies instantly</div></div>
+    </div>
+    <div class="chat-msgs" id="chatMsgs">
+      <div class="cmsg bot">Hi! 👋 I'm your study abroad guide. Ask me anything about MBBS, Ausbildung, visas, or costs.</div>
+    </div>
+    <div class="chat-chips">
+      <div class="cchip" onclick="quickAsk('Best country for MBBS?')">🏥 MBBS countries</div>
+      <div class="cchip" onclick="quickAsk('Explain Germany Ausbildung')">🇩🇪 Ausbildung</div>
+      <div class="cchip" onclick="quickAsk('How does the visa process work?')">📋 Visa process</div>
+      <div class="cchip" onclick="quickAsk('What is the total cost?')">💰 Costs</div>
+    </div>
+    <div class="chat-input-row">
+      <input class="cinput" id="chatInput" placeholder="Ask anything..." onkeydown="if(event.key==='Enter')sendChat()" />
+      <button class="csend" onclick="sendChat()">→</button>
+    </div>
+  </div>
+  <button class="chat-toggle-btn" onclick="toggleChatbot()" id="chatBtn">💬</button>
+</div>
+
+<!-- WHATSAPP -->
+<a class="wa-btn" href="https://wa.me/919876500000" target="_blank" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">💬</a>
+
+<!-- COOKIE -->
+<div id="cookie">
+  <span>We use cookies to improve your experience. <a href="#">Learn more</a>.</span>
+  <button class="btn btn-gold btn-sm" onclick="document.getElementById('cookie').classList.add('hidden')">Accept</button>
+</div>
+
+<script>
+function smoothTo(id){
+  const el=document.getElementById(id)
+  if(el)el.scrollIntoView({behavior:'smooth'})
+}
+
+function showCountry(id,tab){
+  document.querySelectorAll('.cpanel').forEach(p=>p.classList.remove('active'))
+  document.querySelectorAll('.ctab').forEach(t=>t.classList.remove('active'))
+  const panel=document.getElementById('panel-'+id)
+  if(panel)panel.classList.add('active')
+  if(tab)tab.classList.add('active')
+}
+
+function toggleFaq(el){
+  const item=el.parentElement
+  const ans=item.querySelector('.faqa')
+  const open=item.classList.contains('open')
+  document.querySelectorAll('.faqitem').forEach(i=>{
+    i.classList.remove('open')
+    i.querySelector('.faqa').style.maxHeight='0'
+  })
+  if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px'}
+}
+
+function selectSlot(el){
+  document.querySelectorAll('.slot').forEach(s=>s.classList.remove('active'))
+  el.classList.add('active')
+}
+
+function openModal(){document.getElementById('modalOverlay').classList.add('open')}
+function closeModal(){document.getElementById('modalOverlay').classList.remove('open')}
+function closeModalOutside(e){if(e.target===document.getElementById('modalOverlay'))closeModal()}
+
+function submitModal(){
+  document.getElementById('mFormWrap').style.display='none'
+  document.getElementById('mSuccess').style.display='block'
+}
+
+function submitInline(){
+  document.getElementById('inlineSuccess').style.display='block'
+  document.getElementById('inlineSuccess').scrollIntoView({behavior:'smooth',block:'nearest'})
+}
+
+let chatOpen=false
+function toggleChatbot(){
+  chatOpen=!chatOpen
+  document.getElementById('chatBox').classList.toggle('open',chatOpen)
+  document.getElementById('chatBtn').textContent=chatOpen?'✕':'💬'
+}
+function openChatbot(){if(!chatOpen)toggleChatbot()}
+
+function addChatMsg(text,role){
+  const msgs=document.getElementById('chatMsgs')
+  const div=document.createElement('div')
+  div.className='cmsg '+role
+  div.textContent=text
+  msgs.appendChild(div)
+  msgs.scrollTop=msgs.scrollHeight
+  return div
+}
+
+async function quickAsk(q){addChatMsg(q,'user');await callAI(q)}
+async function sendChat(){
+  const inp=document.getElementById('chatInput')
+  const q=inp.value.trim()
+  if(!q)return
+  inp.value=''
+  addChatMsg(q,'user')
+  await callAI(q)
+}
+
+async function callAI(q){
+  const typing=addChatMsg('Thinking…','bot')
+  try{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-6',
+        max_tokens:300,
+        system:'You are a helpful assistant for StudyAbroad, an Indian education consultancy. Answer questions about MBBS in Europe (Serbia, Poland, Hungary, Romania, Italy), Ausbildung in Germany, visas, costs, and study abroad for Indian students. Be concise, warm, and specific. If uncertain, suggest booking a free consultation.',
+        messages:[{role:'user',content:q}]
+      })
+    })
+    const data=await res.json()
+    typing.textContent=data.content?.[0]?.text||'I\'d recommend booking a free consultation for the most accurate answer!'
+  }catch(e){
+    typing.textContent='I\'d suggest booking a free consultation — our team can answer this in detail!'
+  }
+}
+</script>
+</body>
+</html>
