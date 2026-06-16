@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>StudyAbroad — Education, Career & Life Overseas</title>
+<title>StudyAbroad</title>
 <meta name="description" content="Helping Indian students achieve their dreams in medicine, higher education, Ausbildung in Germany, and international careers with end-to-end guidance."/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
@@ -251,7 +251,6 @@ a{text-decoration:none;color:inherit}
 /* ——— WA BTN ——— */
 .wa-btn{position:fixed;bottom:92px;right:26px;z-index:499;width:50px;height:50px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 14px rgba(37,211,102,.32);transition:transform .25s;font-size:22px;text-decoration:none}
 .wa-btn:hover{transform:scale(1.07)}
-
 /* ——— MODAL ——— */
 .moverlay{display:none;position:fixed;inset:0;background:rgba(11,29,58,.88);z-index:1000;align-items:center;justify-content:center;padding:20px}
 .moverlay.open{display:flex}
@@ -295,7 +294,7 @@ footer{background:var(--navy);padding:68px 0 36px;color:var(--white)}
       <li><a onclick="smoothTo('about')">About</a></li>
       <li><a onclick="smoothTo('blog')">Resources</a></li>
       <li><a onclick="smoothTo('faq')">FAQ</a></li>
-      <li><button class="btn btn-gold btn-sm" onclick="openModal()" style="cursor:pointer">Book Free Consultation</button></li>
+      <li><button class="btn btn-gold btn-sm" onclick="openCalendly()" style="cursor:pointer">Book Free Consultation</button></li>
     </ul>
     <div class="nav-mob" onclick="alert('Menu: Services · Countries · About · Resources · FAQ · Book Consultation')">
       <span></span><span></span><span></span>
@@ -310,11 +309,11 @@ footer{background:var(--navy);padding:68px 0 36px;color:var(--white)}
   <div class="container">
     <div class="hero-layout">
       <div>
-        <div class="hero-badge">Trusted by 2,000+ Indian Students</div>
+        <div class="hero-badge">Trusted by 2,000+ Students</div>
         <h1 class="hero-h1">Your Journey<br/>Abroad Starts <em>Here</em></h1>
-        <p class="hero-lead">From choosing your dream career abroad to building your life overseas — we guide you every step of the way.</p>
+        <p class="hero-lead">From choosing your dream career abroad to building your life overseas - we guide you every step of the way.</p>
         <div class="hero-actions">
-          <button class="btn btn-gold" onclick="openModal()">Book Free Consultation</button>
+          <button class="btn btn-gold" onclick="openCalendly()">Book Free Consultation</button>
           <button class="btn btn-ghost" onclick="smoothTo('services')">Explore Programs</button>
         </div>
         <div class="hero-stats">
@@ -380,32 +379,32 @@ footer{background:var(--navy);padding:68px 0 36px;color:var(--white)}
     <div class="gold-bar"></div>
     <h2 class="section-title">Programs We Specialise In</h2>
     <div class="services-grid">
-      <div class="scard" onclick="openModal()">
+      <div class="scard" onclick="openCalendly()">
         <div class="scard-num">01 — Medicine Abroad</div>
         <h3 class="scard-title">MBBS &amp; MD in Europe</h3>
         <p class="scard-body">Study medicine in NMC-recognised universities across Serbia, Hungary, Poland, Romania, and Italy at a fraction of Indian private college costs. English-medium programs with integrated clinical training and a direct path to FMGE/USMLE.</p>
         <div class="tags"><span class="tag">Serbia</span><span class="tag">Hungary</span><span class="tag">Poland</span><span class="tag">Romania</span><span class="tag">Italy</span><span class="tag">6 Years</span></div>
       </div>
-      <div class="scard" onclick="openModal()">
+      <div class="scard" onclick="openCalendly()">
         <div class="scard-num">02 — Germany Pathway</div>
         <h3 class="scard-title">Ausbildung, Study &amp; Settlement</h3>
         <p class="scard-body">Germany's vocational training system is one of the best routes to earn, learn, and build a European career. We guide you from language preparation to visa, placement, and long-term permanent residency — completely end-to-end.</p>
         <div class="tags"><span class="tag">Ausbildung</span><span class="tag">German Language</span><span class="tag">Visa</span><span class="tag">PR Pathway</span></div>
       </div>
-      <div class="scard" onclick="openModal()">
+      <div class="scard" onclick="openCalendly()">
         <div class="scard-num">03 — Higher Education</div>
         <h3 class="scard-title">Bachelor's &amp; Master's Degrees</h3>
         <p class="scard-body">Engineering, business, computer science, law, architecture — we place students in affordable, globally ranked universities across Europe with scholarship guidance, IELTS/TOEFL prep, and full application support.</p>
         <div class="tags"><span class="tag">Bachelor's</span><span class="tag">Master's</span><span class="tag">Scholarships</span><span class="tag">STEM &amp; Business</span></div>
       </div>
-      <div class="scard" onclick="openModal()">
+      <div class="scard" onclick="openCalendly()">
         <div class="scard-num">04 — Visa &amp; Relocation</div>
         <h3 class="scard-title">Visa Consulting &amp; Life Setup Abroad</h3>
         <p class="scard-body">From student visas to work permits and family reunification — we handle documentation, embassy preparation, and arrival logistics so you can focus on building your new life abroad from day one.</p>
         <div class="tags"><span class="tag">Student Visa</span><span class="tag">Work Permit</span><span class="tag">Housing</span><span class="tag">Insurance</span></div>
       </div>
     </div>
-    <div class="cta-center"><button class="btn btn-gold" onclick="openModal()">Book Free Consultation</button></div>
+    <div class="cta-center"><button class="btn btn-gold" onclick="openCalendly()">Book Free Consultation</button></div>
   </div>
 </section>
 
@@ -453,7 +452,7 @@ footer{background:var(--navy);padding:68px 0 36px;color:var(--white)}
           <div class="c-check"><span>✓</span> Housing &amp; city registration</div>
           <div class="c-check"><span>✓</span> Health insurance setup</div>
         </div>
-        <button class="btn btn-gold" style="margin-top:26px;width:100%;justify-content:center" onclick="openModal()">Apply for Germany</button>
+        <button class="btn btn-gold" style="margin-top:26px;width:100%;justify-content:center" onclick="openCalendly()">Apply for Germany</button>
       </div>
     </div>
 
@@ -485,7 +484,7 @@ footer{background:var(--navy);padding:68px 0 36px;color:var(--white)}
           <div class="c-check"><span>✓</span> Strong Indian student community</div>
           <div class="c-check"><span>✓</span> No IELTS required</div>
         </div>
-        <button class="btn btn-gold" style="margin-top:26px;width:100%;justify-content:center" onclick="openModal()">Apply for Serbia</button>
+        <button class="btn btn-gold" style="margin-top:26px;width:100%;justify-content:center" onclick="openCalendly()">Apply for Serbia</button>
       </div>
     </div>
 
@@ -509,7 +508,7 @@ footer{background:var(--navy);padding:68px 0 36px;color:var(--white)}
       <div class="cvisual">
         <div class="cflag">🇵🇱</div>
         <div class="cquote">"Poland's medical universities have a long tradition of training international students and offer a clear pathway to EU medical registration."</div>
-        <button class="btn btn-gold" style="margin-top:26px;width:100%;justify-content:center" onclick="openModal()">Apply for Poland</button>
+        <button class="btn btn-gold" style="margin-top:26px;width:100%;justify-content:center" onclick="openCalendly()">Apply for Poland</button>
       </div>
     </div>
 
@@ -533,7 +532,7 @@ footer{background:var(--navy);padding:68px 0 36px;color:var(--white)}
       <div class="cvisual">
         <div class="cflag">🇭🇺</div>
         <div class="cquote">"Hungary is home to some of the most prestigious medical institutions in Central Europe — a strong choice for students aiming at global careers."</div>
-        <button class="btn btn-gold" style="margin-top:26px;width:100%;justify-content:center" onclick="openModal()">Apply for Hungary</button>
+        <button class="btn btn-gold" style="margin-top:26px;width:100%;justify-content:center" onclick="openCalendly()">Apply for Hungary</button>
       </div>
     </div>
 
@@ -557,7 +556,7 @@ footer{background:var(--navy);padding:68px 0 36px;color:var(--white)}
       <div class="cvisual">
         <div class="cflag">🇮🇹</div>
         <div class="cquote">"Italy offers exceptional value — public university fees with world-class medical training and the bonus of studying in one of Europe's most vibrant cultures."</div>
-        <button class="btn btn-gold" style="margin-top:26px;width:100%;justify-content:center" onclick="openModal()">Apply for Italy</button>
+        <button class="btn btn-gold" style="margin-top:26px;width:100%;justify-content:center" onclick="openCalendly()">Apply for Italy</button>
       </div>
     </div>
 
@@ -581,7 +580,7 @@ footer{background:var(--navy);padding:68px 0 36px;color:var(--white)}
       <div class="cvisual">
         <div class="cflag">🇷🇴</div>
         <div class="cquote">"Romania offers the most economical path to an EU-recognised MBBS — ideal for students who want quality without compromising their family's financial wellbeing."</div>
-        <button class="btn btn-gold" style="margin-top:26px;width:100%;justify-content:center" onclick="openModal()">Apply for Romania</button>
+        <button class="btn btn-gold" style="margin-top:26px;width:100%;justify-content:center" onclick="openCalendly()">Apply for Romania</button>
       </div>
     </div>
   </div>
@@ -686,43 +685,15 @@ footer{background:var(--navy);padding:68px 0 36px;color:var(--white)}
           </div>
         </div>
       </div>
-      <div>
-        <div class="bform" id="bookingFormBlock">
-          <div class="bform-title">Reserve Your Spot</div>
-          <div class="bform-sub">All fields required. We respond within 2 hours.</div>
-          <div class="form-row2">
-            <div><label class="flabel">First Name</label><input class="finput" type="text" placeholder="Priya" /></div>
-            <div><label class="flabel">Last Name</label><input class="finput" type="text" placeholder="Sharma" /></div>
-          </div>
-          <div class="form-row"><label class="flabel">Email Address</label><input class="finput" type="email" placeholder="priya@example.com" /></div>
-          <div class="form-row"><label class="flabel">Phone Number</label><input class="finput" type="tel" placeholder="+91 98765 43210" /></div>
-          <div class="form-row"><label class="flabel">I Am Interested In</label>
-            <select class="fselect">
-              <option value="">Select a program</option>
-              <option>MBBS / Medicine Abroad</option>
-              <option>Ausbildung in Germany</option>
-              <option>Bachelor's Degree Abroad</option>
-              <option>Master's Degree Abroad</option>
-              <option>Work Visa / Career Abroad</option>
-              <option>Not sure yet — need guidance</option>
-            </select>
-          </div>
-          <div class="form-row"><label class="flabel">Preferred Country</label>
-            <select class="fselect">
-              <option value="">Select a country</option>
-              <option>Germany</option><option>Serbia</option><option>Poland</option>
-              <option>Hungary</option><option>Italy</option><option>Romania</option>
-              <option>Not decided yet</option>
-            </select>
-          </div>
-          <div class="success-msg" id="inlineSuccess">
-            <div class="success-title">🎉 You're booked!</div>
-            <div class="success-body">We've sent a Google Meet link to your email. Our counsellor will confirm within 2 hours.</div>
-          </div>
-          <button class="btn btn-gold" style="width:100%;justify-content:center;padding:15px" onclick="submitInline()">Confirm Free Consultation →</button>
-          <p style="font-size:11px;color:var(--slate);text-align:center;margin-top:13px">No payment required. Cancel anytime.</p>
-        </div>
-      </div>
+      <div class="bform">
+  <div class="bform-title">Book Your Consultation</div>
+
+  <div
+    class="calendly-inline-widget"
+    data-url="https://calendly.com/afotens/free-study-abroad-consultation"
+    style="min-width:320px;height:700px;">
+  </div>
+</div>
     </div>
   </div>
 </section>
@@ -848,7 +819,7 @@ footer{background:var(--navy);padding:68px 0 36px;color:var(--white)}
           <li><a onclick="smoothTo('about')">About Us</a></li>
           <li><a onclick="smoothTo('blog')">Resources &amp; Blog</a></li>
           <li><a onclick="smoothTo('testimonials')">Student Stories</a></li>
-          <li><a onclick="openModal()">Book a Consultation</a></li>
+          <li><a onclick="openCalendly()">Book a Consultation</a></li>
           <li><a href="#">Privacy Policy</a></li>
           <li><a href="#">Terms of Service</a></li>
         </ul>
@@ -950,7 +921,7 @@ function selectSlot(el){
   el.classList.add('active')
 }
 
-function openModal(){document.getElementById('modalOverlay').classList.add('open')}
+function openCalendly(){document.getElementById('modalOverlay').classList.add('open')}
 function closeModal(){document.getElementById('modalOverlay').classList.remove('open')}
 function closeModalOutside(e){if(e.target===document.getElementById('modalOverlay'))closeModal()}
 
@@ -1012,5 +983,6 @@ async function callAI(q){
   }
 }
 </script>
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
